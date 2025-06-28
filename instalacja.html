@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Strona z podglądem zdjęć</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <div class="page-container">
+
+    <div class="navbar">
+      <div class="navbar-left">
+        <img src="https://i.ibb.co/twGZzPv4/92a505259d124e0bf8792171010f4444.png" alt="Logo" class="logo" />
+      </div>
+      <nav class="navbar-center">
+        <a href="index.html">Strona Główna</a>
+        <a href="faq.html">FAQ</a>
+      </nav>
+    </div>
+
+    <main>
+      <h1>Instalacja:</h1>
+      <ul class="feature-list">
+        <li>
+          <span class="feature-text">Podpunkt 1 - Szybkie podglądy</span>
+          <button class="preview-button" data-img="https://i.ibb.co/YT3Wv8NL/Zrzut-ekranu-2025-06-28-151901.png" aria-label="Podgląd podpunktu 1">
+            <img src="https://cdn-icons-png.flaticon.com/512/709/709612.png" alt="Ikona oka" />
+            Podgląd
+          </button>
+        </li>
+        <li>
+          <span class="feature-text">Podpunkt 2 - Responsywność i animacje</span>
+          <button class="preview-button" data-img="https://i.ibb.co/YT3Wv8NL/Zrzut-ekranu-2025-06-28-151901.png" aria-label="Podgląd podpunktu 2">
+            <img src="https://cdn-icons-png.flaticon.com/512/709/709612.png" alt="Ikona oka" />
+            Podgląd
+          </button>
+        </li>
+        <li>
+          <span class="feature-text">Podpunkt 3 - Obsługa urządzeń mobilnych</span>
+          <button class="preview-button" data-img="https://i.ibb.co/YT3Wv8NL/Zrzut-ekranu-2025-06-28-151901.png" aria-label="Podgląd podpunktu 3">
+            <img src="https://cdn-icons-png.flaticon.com/512/709/709612.png" alt="Ikona oka" />
+            Podgląd
+          </button>
+        </li>
+      </ul>
+    </main>
+
+<footer class="footer">
+  <div class="footer-left">
+    &copy; <strong>Wild</strong> 2025. Grafiki wykorzystane na stronie są własnością Garmory sp. z o.o.
+  </div>
+  <div class="footer-center">
+    Designed by <span class="designer-name">Xaller</span>
+  </div>
+  <div class="footer-right">
+    <a href="polityka.html" class="privacy-link">Polityka prywatności</a>
+  </div>
+</footer>
+
+  </div>
+
+  <div class="image-modal" role="dialog" aria-modal="true" tabindex="-1">
+    <img src="" alt="Podgląd obrazka" />
+  </div>
+
+  <script>
+    const previewButtons = document.querySelectorAll('.preview-button');
+    const modal = document.querySelector('.image-modal');
+    const modalImg = modal.querySelector('img');
+
+    previewButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        const imgSrc = button.getAttribute('data-img');
+        modalImg.src = imgSrc;
+        modal.classList.add('show');
+        modal.focus();
+      });
+    });
+
+    modal.addEventListener('click', () => {
+      modal.classList.remove('show');
+      modalImg.src = '';
+    });
+
+    modal.addEventListener('keydown', e => {
+      if (e.key === 'Escape') {
+        modal.classList.remove('show');
+        modalImg.src = '';
+      }
+    });
+  </script>
+
+</body>
+</html>
