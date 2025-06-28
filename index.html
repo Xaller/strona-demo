@@ -18,28 +18,51 @@
   </div>
 </div>
 
-  <div class="center-section">
-<p class="description2">
-  Nowy Lootlog do gry Margonem. Współpracujący w pełni z platformą Discord.<br>
-  Lootlog jest w pełni darmowy, nie wymaga on wykupienia żadnych dostępów tudzież licencji.
-</p>
-<div class="buttons">
-  <a href="instalka link" class="button">Instalacja Lootloga</a>
-  <a href="https://discord.gg/K3QGyaZKd7" class="button">Discord</a>
-  <a href="https://xaller.github.io/funkcje.html" class="button">Funkcje Lootloga</a>
+<div class="center-section">
+  <p class="description2">
+    Nowy Lootlog do gry Margonem. Współpracujący w pełni z platformą Discord.<br>
+    Lootlog jest w pełni darmowy, nie wymaga on wykupienia żadnych dostępów tudzież licencji.
+  </p>
+  <div class="buttons">
+    <a href="instalka link" class="button">Instalacja Lootloga</a>
+    <a href="https://discord.gg/K3QGyaZKd7" class="button">Discord</a>
+    <a href="/funkcje.html" class="button">Funkcje Lootloga</a>
+  </div>
 </div>
-  </div>
 
-  <div class="image-row">
-    <img src="https://i.imgur.com/Sdm4dwk.png" alt="Obrazek 1">
-    <img src="https://i.imgur.com/Sdm4dwk.png" alt="Obrazek 2">
-    <img src="https://i.imgur.com/Sdm4dwk.png" alt="Obrazek 3">
-  </div>
+<div class="image-row">
+  <img src="https://i.imgur.com/Sdm4dwk.png" alt="Obrazek 1" class="enlargeable">
+  <img src="https://i.imgur.com/Sdm4dwk.png" alt="Obrazek 2" class="enlargeable">
+  <img src="https://i.imgur.com/Sdm4dwk.png" alt="Obrazek 3" class="enlargeable">
+</div>
 
-  <footer>
-    &copy; 2025-2025 Wild Grafiki wykorzystane na stronie są własnością Garmory sp. z o.o.
-      <p><a href="LINK" class="privacy-link">Polityka prywatności</a></p>
-  </footer>
+<!-- MODAL DO POWIĘKSZANIA -->
+<div class="image-modal" id="imageModal">
+  <img src="" alt="Powiększony obraz" id="modalImage" />
+</div>
+
+<footer>
+  &copy; 2025-2025 Wild Grafiki wykorzystane na stronie są własnością Garmory sp. z o.o.
+  <p><a href="LINK" class="privacy-link">Polityka prywatności</a></p>
+</footer>
+
+<script>
+  const modal = document.getElementById('imageModal');
+  const modalImg = document.getElementById('modalImage');
+  const images = document.querySelectorAll('.enlargeable');
+
+  images.forEach(img => {
+    img.addEventListener('click', () => {
+      modal.style.display = 'flex';
+      modalImg.src = img.src;
+    });
+  });
+
+  modal.addEventListener('click', () => {
+    modal.style.display = 'none';
+    modalImg.src = '';
+  });
+</script>
 
 </body>
 </html>
