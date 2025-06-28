@@ -86,6 +86,30 @@ h2 {
   color: var(--niebieski);
   font-size:16px;
 }
+strong1 {
+  color: gold;
+  background: linear-gradient(
+    90deg,
+    #f0ad4e 20%,
+    #fff 40%,
+    #f0ad4e 60%
+  );
+  background-size: 200% 100%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  animation: shine-text 5s linear infinite;
+}
+
+@keyframes shine-text {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
 
     /* Lista funkcji */
     ul.feature-list {
