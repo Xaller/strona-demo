@@ -2,49 +2,65 @@
 <html lang="pl">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Dokumentacja Lootlog</title>
-  <link rel="icon" href="https://i.ibb.co/twGZzPv4/92a505259d124e0bf8792171010f4444.png" type="image/x-icon">
-  <link rel="stylesheet" href="styles.css" />
-  <style>
-  </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FAQ – Lootlog</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="page-container">
-    <div class="navbar">
-      <div class="navbar-left">
-        <img src="https://i.ibb.co/twGZzPv4/92a505259d124e0bf8792171010f4444.png" alt="Logo" class="logo" />
-      </div>
-      <nav class="navbar-center">
-        <a href="index.html">Strona Główna</a>
-        <a href="faq.html">FAQ</a>
-      </nav>
+
+  <!-- NAVBAR -->
+  <div class="navbar">
+    <div class="navbar-left">
+      <img src="https://i.ibb.co/twGZzPv4/92a505259d124e0bf8792171010f4444.png" alt="Logo" class="logo" />
     </div>
-
-    <main>
-      <h1>Najczęściej zadawane pytania:</h1>
-      <div class="doc-container">
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-      </div>
-    </main>
-
-    <footer class="footer">
-      <div class="footer-left">
-        &copy; <strong>Wild</strong> 2025. Grafiki wykorzystane na stronie są własnością Garmory sp. z o.o.
-      </div>
-      <div class="footer-center">
-        Designed by <span class="designer-name">Xaller</span>
-      </div>
-      <div class="footer-right">
-        <a href="#" class="privacy-link">Polityka prywatności</a>
-      </div>
-    </footer>
-
-    <div class="image-modal" role="dialog" aria-modal="true" tabindex="-1">
-      <img src="" alt="Podgląd obrazka" />
+    <div class="navbar-center">
+      <a href="index.html">Strona Główna</a>
+      <a href="faq.html">FAQ</a>
     </div>
   </div>
+
+  <!-- SEKCJA FAQ -->
+  <div class="center-section">
+    <h1>Najczęściej zadawane pytania</h1>
+    <div class="faq-section">
+      <div class="faq-question">Czy Lootlog jest legalny?</div>
+      <div class="faq-answer">
+        Tak, Lootlog nie ingeruje w mechanikę gry ani nie wykorzystuje zakazanych metod. Odczytuje jedynie dane dostępne w przeglądarce.
+      </div>
+
+      <div class="faq-question">Czy mogę używać Lootloga na kilku postaciach?</div>
+      <div class="faq-answer">
+        Tak! Lootlog wspiera wielu graczy i postacie. Każda postać może mieć swoje własne statystyki i zapisy.
+      </div>
+
+      <div class="faq-question">Jak połączyć Lootloga z Discordem?</div>
+      <div class="faq-answer">
+        W ustawieniach Lootloga znajdziesz opcję integracji z Discordem. Wystarczy podać swój token webhooka i wszystko działa automatycznie.
+      </div>
+
+      <div class="faq-question">Czy moje dane są bezpieczne?</div>
+      <div class="faq-answer">
+        Tak. Lootlog nie gromadzi żadnych poufnych informacji. Wszystkie dane są zapisywane lokalnie lub na Twoim serwerze, jeśli skonfigurujesz webhook.
+      </div>
+    </div>
+  </div>
+
+<footer>
+  &copy; 2025-2025 Wild Grafiki wykorzystane na stronie są własnością Garmory sp. z o.o. <a href="LINK" class="privacy-link">Polityka prywatności</a> DesignXaller
+</footer>
+
+  <!-- SKRYPT FAQ -->
+  <script>
+    const questions = document.querySelectorAll('.faq-question');
+    questions.forEach(q => {
+      q.addEventListener('click', () => {
+        q.classList.toggle('open');
+        questions.forEach(other => {
+          if (other !== q) other.classList.remove('open');
+        });
+      });
+    });
+  </script>
+
 </body>
 </html>
