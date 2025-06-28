@@ -2,112 +2,48 @@
 <html lang="pl">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>FAQ – Lootlog</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Dokumentacja Lootlog</title>
+  <link rel="stylesheet" href="styles.css" />
   <style>
-    .faq-section {
-      max-width: 800px;
-      margin: 0 auto;
-      padding: 40px 20px;
-      color: #ccc;
-    }
-
-    .faq-question {
-      background-color: rgba(255, 255, 255, 0.05);
-      padding: 15px 20px;
-      border-radius: 12px;
-      margin-bottom: 15px;
-      cursor: pointer;
-      transition: background-color 0.2s ease;
-    }
-
-    .faq-question:hover {
-        border-radius: 0px 5px 0px 5px;
-        box-shadow: 0 0 21px 5px rgba(0, 142, 236, 0.705);
-         transition: all 0.2s ease-out;
-       border: 1px solid #3d6aff;
-    }
-
-    .faq-answer {
-      display: none;
-      padding: 10px 20px;
-      margin-top: -10px;
-      margin-bottom: 15px;
-      font-size: 15px;
-      color: #aaa;
-      background-color: rgba(255, 255, 255, 0.02);
-      border-left: 3px solid #3d6aff;
-      border-radius: 0 0 12px 12px;
-    }
-
-    .faq-question.open + .faq-answer {
-      display: block;
-      animation: fadeIn 0.2s ease-in-out;
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(0); }
-      to { opacity: 1; transform: translateY(0); }
-    }
   </style>
 </head>
 <body>
-
-  <!-- NAVBAR -->
-  <div class="navbar">
-    <div class="navbar-left">
-      <img src="sciezka/do/logo.png" alt="Logo" class="logo" />
+  <div class="page-container">
+    <div class="navbar">
+      <div class="navbar-left">
+        <img src="https://i.ibb.co/twGZzPv4/92a505259d124e0bf8792171010f4444.png" alt="Logo" class="logo" />
+      </div>
+      <nav class="navbar-center">
+        <a href="index.html">Strona Główna</a>
+        <a href="faq.html">FAQ</a>
+      </nav>
     </div>
-    <div class="navbar-center">
-      <a href="index.html">Strona Główna</a>
-      <a href="faq.html">FAQ</a>
+
+    <main>
+      <h1>Najczęściej zadawane pytania:</h1>
+      <div class="doc-container">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-left">
+        &copy; <strong>Wild</strong> 2025. Grafiki wykorzystane na stronie są własnością Garmory sp. z o.o.
+      </div>
+      <div class="footer-center">
+        Designed by <span class="designer-name">Xaller</span>
+      </div>
+      <div class="footer-right">
+        <a href="#" class="privacy-link">Polityka prywatności</a>
+      </div>
+    </footer>
+
+    <div class="image-modal" role="dialog" aria-modal="true" tabindex="-1">
+      <img src="" alt="Podgląd obrazka" />
     </div>
   </div>
-
-  <!-- SEKCJA FAQ -->
-  <div class="center-section">
-    <h1>Najczęściej zadawane pytania</h1>
-    <div class="faq-section">
-      <div class="faq-question">Czy Lootlog jest legalny?</div>
-      <div class="faq-answer">
-        Tak, Lootlog nie ingeruje w mechanikę gry ani nie wykorzystuje zakazanych metod. Odczytuje jedynie dane dostępne w przeglądarce.
-      </div>
-
-      <div class="faq-question">Czy mogę używać Lootloga na kilku postaciach?</div>
-      <div class="faq-answer">
-        Tak! Lootlog wspiera wielu graczy i postacie. Każda postać może mieć swoje własne statystyki i zapisy.
-      </div>
-
-      <div class="faq-question">Jak połączyć Lootloga z Discordem?</div>
-      <div class="faq-answer">
-        W ustawieniach Lootloga znajdziesz opcję integracji z Discordem. Wystarczy podać swój token webhooka i wszystko działa automatycznie.
-      </div>
-
-      <div class="faq-question">Czy moje dane są bezpieczne?</div>
-      <div class="faq-answer">
-        Tak. Lootlog nie gromadzi żadnych poufnych informacji. Wszystkie dane są zapisywane lokalnie lub na Twoim serwerze, jeśli skonfigurujesz webhook.
-      </div>
-    </div>
-  </div>
-
-  <footer>
-    &copy; 2025 Lootlog. Wszelkie prawa zastrzeżone. 
-    <a class="privacy-link" href="twoj-link-do-polityki">Polityka prywatności</a>
-  </footer>
-
-  <!-- SKRYPT FAQ -->
-  <script>
-    const questions = document.querySelectorAll('.faq-question');
-    questions.forEach(q => {
-      q.addEventListener('click', () => {
-        q.classList.toggle('open');
-        questions.forEach(other => {
-          if (other !== q) other.classList.remove('open');
-        });
-      });
-    });
-  </script>
-
 </body>
 </html>
