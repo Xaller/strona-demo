@@ -4,7 +4,7 @@
       height: 100%;
       margin: 0;
       padding: 0;
-      background-color: #0a0a23;
+      background-color: var(--background);
       color: #eee;
       font-family: Nunito;
         animation: fadeSlideDown 0.1s ease forwards;
@@ -25,7 +25,7 @@ body {
     .navbar {
       display: flex;
       align-items: center;
-      background-color: #12124b;
+      background-color: var(--stopki);
       padding: 10px 20px;
       border-radius: 8px;
       margin-bottom: 40px;
@@ -86,6 +86,24 @@ h2 {
   color: var(--niebieski);
   font-size:16px;
 }
+
+strong2 {
+  color: gold;
+  background: linear-gradient(
+    90deg,
+    #f0ad4e 20%,
+    #fff 40%,
+    #f0ad4e 60%
+  );
+  background-size: 200% 100%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  animation: shine-text 5s linear infinite;
+  text-align:center;
+  font-size: 15px;
+}
+
 strong1 {
   color: gold;
   background: linear-gradient(
@@ -109,7 +127,32 @@ strong1 {
     background-position: -200% 0;
   }
 }
+.overlay-label {
+    position: absolute;
+    top: 74px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: linear-gradient(90deg, transparent, rgb(61 106 255 / 31%), transparent);
+    padding: 0px 44px;
+    border-radius: 6px;
+    font-weight: bold;
+    font-size: 14px;
+    pointer-events: none;
+    z-index: 2;
+}
+.gallery-item {
+  position: relative;
+  max-width: 200px;
+  cursor: pointer;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: transform 0.2s ease;
+}
 
+.gallery-item img {
+  width: 100%;
+  display: block;
+}
 
     /* Lista funkcji */
     ul.feature-list {
@@ -122,7 +165,7 @@ strong1 {
     }
 
     ul.feature-list li {
-      background: #1e1e50;
+      background: var(--okienka);
       border-radius: 10px;
       padding: 20px;
       display: flex;
@@ -197,7 +240,7 @@ strong1 {
 }
 
 .link-box {
-  background-color: #12124b;
+  background-color: var(--stopki);
   border: 2px solid var(--niebieski);
   padding: 20px 25px;
   border-radius: 12px;
@@ -343,7 +386,7 @@ strong {
   align-items: center;
   flex-wrap: wrap;
   padding: 15px 20px;
-  background-color: #12124b;
+  background-color: var(--stopki);
   color: #7a7aff;
   font-size: 14px;
     border-radius: 0 0 10px 10px;
@@ -413,4 +456,7 @@ strong {
 
 :root {
   --niebieski: #3d6aff;
+  --background: #0a0a23;
+  --okienka: #1e1e50;
+  --stopki: #12124b;
 }
